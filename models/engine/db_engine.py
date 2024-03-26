@@ -2,6 +2,7 @@
 from sqlalchemy import create_engine
 from os import environ
 from sqlalchemy.orm import sessionmaker, scoped_session
+from models.base_model import Base
 
 """ Define new class for engine database """
 class DBStorage: 
@@ -23,5 +24,7 @@ class DBStorage:
         if environ.get('HBNB_ENV') == 'test':
             Base.metadata.drop_all(self.__engine)
 
-        self.__session = scoped_session(sessionmaker(bind=self.__engine,
-                                                      expire_on_commit=False))
+        """ Miss all(self, cls=None)"""
+
+         def all(self, cls=None):
+            """Query all objects from the database"""
