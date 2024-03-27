@@ -9,3 +9,8 @@ class User(BaseModel):
     password = ''
     first_name = ''
     last_name = ''
+
+    """ (Task 9) Defines a relationship between the User and Review classes."""
+    reviews = relationship("Review", cascade="all, delete", backref="user")
+
+
