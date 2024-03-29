@@ -1,29 +1,56 @@
 #!/usr/bin/python3
-""" """
-from tests.test_models.test_base_model import test_basemodel
+"""Test unittest for class Review"""
+import unittest
 from models.review import Review
 
 
-class test_review(test_basemodel):
-    """ """
+class TestReview(unittest.TestCase):
+    """Test cases for Review class"""
 
-    def __init__(self, *args, **kwargs):
-        """ """
-        super().__init__(*args, **kwargs)
-        self.name = "Review"
-        self.value = Review
+    def test_args(self):
+        """Test initialization of Review class"""
+        review = Review()
+        self.assertEqual(review.place_id, "")
+        self.assertEqual(review.user_id, "")
+        self.assertEqual(review.text, "")
 
-    def test_place_id(self):
-        """ """
-        new = self.value()
-        self.assertEqual(type(new.place_id), str)
 
-    def test_user_id(self):
-        """ """
-        new = self.value()
-        self.assertEqual(type(new.user_id), str)
+if __name__ == '__main__':
+    unittest.main()
+#!/usr/bin/python3
+"""Test unittest for class Review"""
+import unittest
+from models.review import Review
+
+
+class TestReview(unittest.TestCase):
+    """Test cases for Review class"""
+
+    def test_args(self):
+        """Test initialization of Review class"""
+        review = Review()
+        self.assertEqual(review.place_id, "")
+        self.assertEqual(review.user_id, "")
+        self.assertEqual(review.text, "")
 
     def test_text(self):
-        """ """
-        new = self.value()
-        self.assertEqual(type(new.text), str)
+        """Test text attribute of Review class"""
+        review = Review()
+        review.text = "Great place!"
+        self.assertEqual(review.text, "Great place!")
+
+    def test_place_id(self):
+        """Test place_id attribute of Review class"""
+        review = Review()
+        review.place_id = "123"
+        self.assertEqual(review.place_id, "123")
+
+    def test_user_id(self):
+        """Test user_id attribute of Review class"""
+        review = Review()
+        review.user_id = "456"
+        self.assertEqual(review.user_id, "456")
+
+
+if __name__ == '__main__':
+    unittest.main()
