@@ -13,7 +13,6 @@ class test_review(test_basemodel):
         self.name = "Review"
         self.value = Review
 
-    """
     def test_place_id(self):
         """ """
         new = self.value()
@@ -28,4 +27,4 @@ class test_review(test_basemodel):
         """ """
         new = self.value()
         self.assertEqual(type(new.text), str)
-    """
+
