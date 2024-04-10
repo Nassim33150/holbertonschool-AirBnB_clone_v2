@@ -3,6 +3,7 @@
 from flask import Flask, render_template
 from models import storage
 
+"""Starts a Flask web application"""
 if __name__ == '__main__':
     app = Flask(__name__)
 
