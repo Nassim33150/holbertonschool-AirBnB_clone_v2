@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This modules import Flask class """
 from flask import Flask, render_template
+from models import *
 from models import storage
 
 """Starts a Flask web application"""
